@@ -183,14 +183,8 @@ checkbox[checked]::before {
         <div class="idInputContainer">
           <input id="gcode" class="idInput" placeholder="Game ID">
         </div>
-	<div class="nameInputContainer">
-          <input id="gname" class="nameInput" placeholder="Nickname">
-        </div>
         <div class="joinButton" onclick="join();" role="button">
           <div class="btext">Join</div>
-        </div>
-	<div class="joinButton" onclick="adv();" role="button">
-          <div class="btext">Spam and open Control Pannel</div>
         </div>
 	
 	<!--<button onclick="brosOcr();">Get Best Bros Game Id(BETA)</button><br>-->
@@ -237,7 +231,6 @@ const generateNewId = () => "BlitzedzzBot" + makeid(3);
 
       function join() {
         var cin = document.getElementById("gcode");
-        var name = document.getElementById("gname");
         joinGame(cin.value,generateNewId,document.getElementById("icogmode").getAttribute("checked")?true:false);
       }
 

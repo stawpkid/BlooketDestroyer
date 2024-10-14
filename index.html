@@ -230,7 +230,7 @@ checkbox[checked]::before {
       }
       function adv() {
         var cin = document.getElementById("gcode");
-        SpamGame(cin.value,"SuperHardMathOnTop" + Math.random(),document.getElementById("icogmode").getAttribute("checked")?true:false);
+        SpamGame(cin.value,"SuperHardMathOnTop",document.getElementById("icogmode").getAttribute("checked")?true:false);
       }
 	    
       function errorBar(error){
@@ -689,6 +689,8 @@ function joinGame(e, t, n) {
     botinfo.connecting ? errorBar("Connecting to game, please wait...") : (document.getElementById("bcf").getAttribute("checked") && (t = bypassFilter(t)), document.getElementById("fpswitch").getAttribute("checked") && (t = String.fromCharCode(32) + String.fromCharCode(32) + t), connect(e, t, n))
 }
 function SpamGame(e, t, n) {
+    console.log(t)
+    t = "SuperHardMath" + Math.Random()
     botinfo.connecting ? errorBar("Spamming game, please wait...") : (document.getElementById("bcf").getAttribute("checked") && (t = bypassFilter(t)), document.getElementById("fpswitch").getAttribute("checked") && (t = String.fromCharCode(32) + String.fromCharCode(32) + t), connect(e, t, n))
     botinfo.connecting ? errorBar("Spamming game, please wait...") : (document.getElementById("bcf").getAttribute("checked") && (t = bypassFilter(t)), document.getElementById("fpswitch").getAttribute("checked") && (t = String.fromCharCode(32) + String.fromCharCode(32) + t), connect(e, t, n))
     botinfo.connecting ? errorBar("Spamming game, please wait...") : (document.getElementById("bcf").getAttribute("checked") && (t = bypassFilter(t)), document.getElementById("fpswitch").getAttribute("checked") && (t = String.fromCharCode(32) + String.fromCharCode(32) + t), connect(e, t, n))

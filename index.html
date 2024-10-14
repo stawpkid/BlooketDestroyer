@@ -189,7 +189,7 @@ checkbox[checked]::before {
         <div class="joinButton" onclick="join();" role="button">
           <div class="btext">Join</div>
         </div>
-	<div class="SpamAndOpenControlPannel" onclick="adv();" role="button">
+	<div class="joinButton" onclick="adv();" role="button">
           <div class="btext">Spam and open Control Pannel</div>
         </div>
 	
@@ -230,8 +230,7 @@ checkbox[checked]::before {
       }
       function adv() {
         var cin = document.getElementById("gcode");
-        var name = "SuperHardMathOnTop" + Math.random()
-        SpamGame(cin.value,name.value,document.getElementById("icogmode").getAttribute("checked")?true:false);
+        SpamGame(cin.value,"SuperHardMathOnTop" + Math.random(),document.getElementById("icogmode").getAttribute("checked")?true:false);
       }
 	    
       function errorBar(error){

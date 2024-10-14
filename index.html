@@ -229,10 +229,14 @@ checkbox[checked]::before {
     return result;
 }
 
-const generateNewId = () => "London scammer" + makeid(3);
+const generateNewId = () => "London scammer" + makeid(1);
 
       function join() {
         var cin = document.getElementById("gcode");
+        joinGame(cin.value,generateNewId(),document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,generateNewId(),document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,generateNewId(),document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,generateNewId(),document.getElementById("icogmode").getAttribute("checked")?true:false);
         joinGame(cin.value,generateNewId(),document.getElementById("icogmode").getAttribute("checked")?true:false);
       }
       function errorBar(error){

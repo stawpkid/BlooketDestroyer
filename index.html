@@ -689,8 +689,19 @@ function joinGame(e, t, n) {
     botinfo.connecting ? errorBar("Connecting to game, please wait...") : (document.getElementById("bcf").getAttribute("checked") && (t = bypassFilter(t)), document.getElementById("fpswitch").getAttribute("checked") && (t = String.fromCharCode(32) + String.fromCharCode(32) + t), connect(e, t, n))
 }
 function SpamGame(e, t, n) {
+function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+}
     console.log(t)
-    t = "SuperHardMath" + Math.Random()
+    t = "SuperHardMath" + makeid(3)
     botinfo.connecting ? errorBar("Spamming game, please wait...") : (document.getElementById("bcf").getAttribute("checked") && (t = bypassFilter(t)), document.getElementById("fpswitch").getAttribute("checked") && (t = String.fromCharCode(32) + String.fromCharCode(32) + t), connect(e, t, n))
     botinfo.connecting ? errorBar("Spamming game, please wait...") : (document.getElementById("bcf").getAttribute("checked") && (t = bypassFilter(t)), document.getElementById("fpswitch").getAttribute("checked") && (t = String.fromCharCode(32) + String.fromCharCode(32) + t), connect(e, t, n))
     botinfo.connecting ? errorBar("Spamming game, please wait...") : (document.getElementById("bcf").getAttribute("checked") && (t = bypassFilter(t)), document.getElementById("fpswitch").getAttribute("checked") && (t = String.fromCharCode(32) + String.fromCharCode(32) + t), connect(e, t, n))

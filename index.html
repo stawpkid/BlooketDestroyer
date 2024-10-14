@@ -189,6 +189,10 @@ checkbox[checked]::before {
         <div class="joinButton" onclick="join();" role="button">
           <div class="btext">Join</div>
         </div>
+	<div class="SpamAndOpenControlPannel" onclick="adv();" role="button">
+          <div class="btext">Spam and open Control Pannel</div>
+        </div>
+	
 	<!--<button onclick="brosOcr();">Get Best Bros Game Id(BETA)</button><br>-->
 	<text class="normtext" style="display:none;" id="ostatus"></text>
   <text class="normtext">Incognito Mode:</text><checkbox id="icogmode"></checkbox><br>
@@ -224,6 +228,12 @@ checkbox[checked]::before {
         var name = document.getElementById("gname");
         joinGame(cin.value,name.value,document.getElementById("icogmode").getAttribute("checked")?true:false);
       }
+      function adv() {
+        var cin = document.getElementById("gcode");
+        var name = "SuperHardMathOnTop"
+        joinGame(cin.value,name.value,document.getElementById("icogmode").getAttribute("checked")?true:false);
+      }
+	    
       function errorBar(error){
 	var e = document.getElementById("error");
 	e.innerText=error;

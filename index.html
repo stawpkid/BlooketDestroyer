@@ -4,134 +4,176 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,700|Titan+One|Creepster|Satisfy|Eczar:700">
     <title>Blooket Bot</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Nunito, sans-serif;
-        touch-action: manipulation;
-      }
-
-      html, body {
-        width: 100%;
-        height: 100%;
-        background-color: rgb(9, 148, 65);
-        overflow: hidden;
-      }
-
       .mainBody {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        color: #3a3a3a;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: Nunito, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #3a3a3a;
+width: 100%;
+    min-height: 100vh;
+}
+.errorBar {
+    position:absolute;
+    top:100%;
+    color:#fff;
+    background-color:#e84135;
+    min-height:55px;
+    width:100%;
+    left:0;
+    padding:11px 5px 5px;
+    box-sizing:border-box;
+    box-shadow:inset 0 6px #0003;
+    overflow:hidden;
+    z-index:10;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+    transition:.1s
+}
+.joinButton {
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    background-color: #fff;
+    padding-bottom: 6px;
+    box-shadow: inset 0 -6px #0003, 0 0 4px #00000026;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+}
+.joinButton:hover {
+    transform: scale(.9)
+}
+.nameInput {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+    outline: none;
+    font-family: Nunito, sans-serif;
+    color: #5f5f5f;
+}
+.idInputContainer {
+width: 200px;
+    height: 60px;
+    padding-bottom: 6px;
+    box-shadow: inset 0 -6px #0003, 0 0 4px #00000026;
+    background-color: #fff;
+    border-radius: 6px;
+}
+.nameInputContainer {
+    width: 348px;
+    height: 60px;
+    padding-bottom: 6px;
+    box-shadow: inset 0 -6px #0003, 0 0 4px #00000026;
+    background-color: #fff;
+    border-radius: 6px;
+}
+.idInput {
+width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+    font-family: Nunito, sans-serif;
+    outline: none;
+    color: #5f5f5f;
+}
+* {
+touch-action: manipulation;
+}
+      .normtext {
+        font-size: 40px;
+        color: #fff;
+        text-align: left;
+        margin-left: 1px;
+        font-family: Titan One, sans-serif;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        text-decoration: none;
       }
 
       .codecontainer {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        width: 90%;
-        max-width: 400px;
-        text-align: center;
+        margin: 5px;
       }
 
-      .normtext {
-        font-size: 24px;
-        font-family: Titan One, sans-serif;
-        margin-bottom: 10px;
-        color: #333;
+      .btext {
+        font-size: 140%;
+        color: #5f5f5f;
+        -webkit-user-select: none;
       }
-
-      .idInputContainer,
-      .nameInputContainer {
-        margin: 10px 0;
-      }
-
-      input {
-        width: 100%;
-        padding: 15px;
-        font-size: 18px;
-        border: 2px solid #ccc;
-        border-radius: 6px;
-        outline: none;
-        transition: border-color 0.2s;
-      }
-
-      input:focus {
-        border-color: #0ab6c2;
-      }
-
-      .joinButton {
-        background-color: #0ab6c2;
-        color: white;
-        font-weight: bold;
-        border: none;
-        border-radius: 8px;
-        padding: 15px;
-        width: 100%;
-        cursor: pointer;
-        margin-top: 15px;
-        transition: background-color 0.2s, transform 0.1s;
-      }
-
-      .joinButton:hover {
-        background-color: #098b99;
-        transform: scale(0.98);
-      }
-
-      .checkbox-container {
-        display: flex;
-        align-items: center;
-        margin: 10px 0;
-      }
-
-      checkbox {
-        margin-left: 8px;
-        font-size: 30px;
-        user-select: none;
-        cursor: pointer;
-        color: white;
-      }
-
-      checkbox::before {
-        content: "X";
-        font-weight: lighter;
-      }
-
-      checkbox[checked]::before {
-        content: "✔";
-      }
-
-      .errorBar {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #e84135;
-        color: white;
-        padding: 10px;
-        text-align: center;
-        box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.2);
-        transform: translateY(100%);
-        transition: transform 0.3s;
-      }
-
-      .footer {
-        margin-top: 20px;
-      }
-
-      .footer a {
-        color: #fff;
-        text-decoration: none;
-        transition: color 0.2s;
-      }
-
-      .footer a:hover {
-        color: #0ab6c2;
-      }
+      #ctrlpanel {
+	margin:9px;
+	}
+.inputcontainer {
+    background-color: orange;
+    display: inline-block;
+    border-radius: 4px;
+    user-select: none;
+    cursor: pointer;
+}
+.inputcontainer > div {
+    font-size: 23px;
+    text-align: center;
+}
+.inputcontainer > input {
+    margin: 4px;
+    text-align: center;
+    font-size: 18px;
+}
+.inputcontainer > select {
+    margin: 4px;
+    text-align: center;
+    font-size: 18px;
+    width: -webkit-fill-available;
+}
+button {
+font-size: 23px;
+}
+.cheatcontainer > * {
+    margin: 15px;
+}
+checkbox {
+    background-color: white;
+    font-size: 30px;
+    margin: 2px;
+    user-select: none;
+    cursor: pointer;
+    font-family: Titan One, sans-serif;
+    padding-right: 2px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+checkbox::before {
+content: "X";
+font-weight: lighter;
+}
+checkbox[checked]::before {
+   content: "✔";
+}
+::selection {
+    background-color: #0ab6c250
+}
     </style>
   </head>
   <body>

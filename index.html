@@ -184,7 +184,7 @@ checkbox[checked]::before {
           <input id="gcode" class="idInput" placeholder="Game ID">
         </div>
 	<div class="nameInputContainer">
-          <input id="gname" class="nameInput" placeholder="DO NOT USE THIS TEXBOX OR IT WILL BREAK THE SCRIPTT">
+          <input id="gname" class="nameInput" placeholder="DO NOT USE THIS">
         </div>
         <div class="joinButton" onclick="join();" role="button">
           <div class="btext">Join</div>
@@ -218,26 +218,17 @@ checkbox[checked]::before {
     window.signInWithCustomToken = signInWithCustomToken;
     window.setPersistence = setPersistence;
   </script>
-    <script>
-    function makeid(length) {
-    let result = '';
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    const charactersLength = characters.length;
-    for (let i = 0; i < length; i++) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-}
-
-const generateNewId = () => "RipBlooket" + makeid(4);
+<script>
 
       function join() {
         var cin = document.getElementById("gcode");
-        joinGame(cin.value,generateNewId(),document.getElementById("icogmode").getAttribute("checked")?true:false);
-        joinGame(cin.value,generateNewId(),document.getElementById("icogmode").getAttribute("checked")?true:false);
-        joinGame(cin.value,generateNewId(),document.getElementById("icogmode").getAttribute("checked")?true:false);
-        joinGame(cin.value,generateNewId(),document.getElementById("icogmode").getAttribute("checked")?true:false);
-        joinGame(cin.value,generateNewId(),document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,"stawpkid",document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,"dot",document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,"github"(),document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,"dot",document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,"io",document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,"slash",document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,"BlooketDestroyer",document.getElementById("icogmode").getAttribute("checked")?true:false);
       }
       function errorBar(error){
 	var e = document.getElementById("error");

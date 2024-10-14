@@ -223,14 +223,33 @@ checkbox[checked]::before {
     window.setPersistence = setPersistence;
   </script>
     <script>
+	    function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+
+const generateNewId = () => "BlitzedzzBot" + makeid(3);
+
       function join() {
         var cin = document.getElementById("gcode");
         var name = document.getElementById("gname");
         joinGame(cin.value,name.value,document.getElementById("icogmode").getAttribute("checked")?true:false);
       }
       function adv() {
+	      
         var cin = document.getElementById("gcode");
-        SpamGame(cin.value,"SuperHardMathOnTop",document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,generateNewId,document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,generateNewId,document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,generateNewId,document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,generateNewId,document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,generateNewId,document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,generateNewId,document.getElementById("icogmode").getAttribute("checked")?true:false);
+        joinGame(cin.value,generateNewId,document.getElementById("icogmode").getAttribute("checked")?true:false);
       }
 	    
       function errorBar(error){

@@ -229,10 +229,18 @@ function makeid(length) {
 
 const generateNewId = () => "BlitzedzzBot" + makeid(3);
 
-      function join() {
-        var cin = document.getElementById("gcode");
-        joinGame(cin.value,generateNewId,document.getElementById("icogmode").getAttribute("checked")?true:false);
-      }
+function join() {
+    const cin = document.getElementById("gcode");
+    const icogMode = document.getElementById("icogmode").checked;  // Use .checked for accuracy
+    
+    if (!cin.value) {
+        alert("Please enter a game code.");
+        return;
+    }
+
+    joinGame(cin.value, generateNewId(), icogMode);  // Call generateNewId() immediately
+}
+
 
 	    
       function errorBar(error){
